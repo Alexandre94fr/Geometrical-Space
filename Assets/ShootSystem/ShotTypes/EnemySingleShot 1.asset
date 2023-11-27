@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd365c99820c4b4eae3bf2ecd795f55, type: 3}
   m_Name: EnemySingleShot 1
   m_EditorClassIdentifier: 
-  projectileSprite: {fileID: 21300000, guid: c3ea1661322b8d84b9741bde431d6170, type: 3}
-  spriteColor: {r: 1, g: 0, b: 0, a: 0}
-  projectileDamage: 1
+  _hideSingleShotEnable: 0
+  _hideMultiShotEnable: 1
+  _hideSpawingShotEnable: 1
+  singleShot: 1
+  multiShot: 0
+  spawningShot: 0
   projectileSpeed: 7.5
   projectileTimeBetweenShot: 2.5
+  projectileSprite: {fileID: 21300000, guid: c3ea1661322b8d84b9741bde431d6170, type: 3}
+  spriteColor: {r: 1, g: 0, b: 0, a: 1}
+  allSpritesColor: {r: 0, g: 0, b: 0, a: 0}
   totalNomberOfProjectile: 1
   angledDifferenceBetweenProjectile: 0
+  enemyList: 0
