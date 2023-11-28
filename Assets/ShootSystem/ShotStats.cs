@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ShotData", menuName = "ScriptableObject/ShotData")]
+[CreateAssetMenu(fileName = "ShotStats", menuName = "ScriptableObject/ShotStats")]
 public class ShotStats : ScriptableObject
 {
     #region Variables
@@ -22,23 +21,44 @@ public class ShotStats : ScriptableObject
 
     #region Based stats
     [Header("Basic Stats")]
+    public ProjectileType projectileType;
     public float projectileSpeed;
     public float projectileTimeBetweenShot;
+    public Vector2 baseProjectileDirection = new(0, -90);
     #endregion
 
     #region Single Shot Stats
     [Header("Single Shot Stats")]
     [ShowCondition("singleShot")]
+        public ProjectileTag projectileTag;
+    [ShowCondition("singleShot")]
+        public ProjectileSpriteType projectileSpriteType;
+    [ShowCondition("singleShot")]
         public Sprite projectileSprite;
     [ShowCondition("singleShot")]
         public Color spriteColor;
+    [ShowCondition("singleShot")]
+        public Vector2 spriteSize = new(1, 1);
+    [ShowCondition("singleShot")]
+        public int projectileDamage;
     #endregion
 
     #region Multiple Shot Stats
     [Header("Multiple Shot Stats")]
     [ShowCondition("multiShot")]
-        public Color allSpritesColor;
+        public ProjectileTag projectilesTag;
     [ShowCondition("multiShot")]
+        public ProjectileSpriteType projectilesSpriteType;
+    [ShowCondition("multiShot")]
+        public Sprite projectilesSprite;
+    [ShowCondition("multiShot")]
+        public Vector2 spritesSize = new(1, 1);
+    [ShowCondition("multiShot")]
+        public Color spritesColor;
+    [ShowCondition("multiShot")]
+        public int projectilesDamage;
+    [ShowCondition("multiShot")]
+    [Range(2, Mathf.Infinity)]
         public int totalNomberOfProjectile;
     [ShowCondition("multiShot")]
         public int angledDifferenceBetweenProjectile;
@@ -47,12 +67,41 @@ public class ShotStats : ScriptableObject
     #region Spawning Shot Stats
     [Header("Spawning Shot Stats")]
     [ShowCondition("spawningShot")]
-        public EnemyList.EnemyListEnum enemyList;
+        public EnemyStats.EnemyListEnum enemyList;
+    [ShowCondition("spawningShot")]
+    [Range(2, Mathf.Infinity)]
+        public int totalNumberOfEnemiesSpawn;
+    [ShowCondition("spawningShot")]
+        public int angledDifferenceBetweenEnemies;
     #endregion
 
-    #if UNITY_EDITOR
+    #region Enums
+    public enum ProjectileType
+    {
+        PlayerSingleShot,
+        EnemySingleShot,
+        FrontAngledTripleShot,
+        MinionsShot,
+        PlayerMultiShot,
+    }
+
+    public enum ProjectileSpriteType
+    {
+        Rectangular,
+        Circular,
+    }
+
+    public enum ProjectileTag
+    {
+        PlayerProjectile,
+        EnemyProjectile,
+    }
+    #endregion
+
+#if UNITY_EDITOR
     private void OnValidate()
     {
+        #region Show and Hide attributes
         if (singleShot)
         {
             _hideSingleShotEnable = false;
@@ -86,6 +135,7 @@ public class ShotStats : ScriptableObject
             _hideMultiShotEnable = false;
             _hideSpawingShotEnable = false;
         }
+        #endregion
     }
     #endif
 }
