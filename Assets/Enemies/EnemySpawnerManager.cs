@@ -96,7 +96,7 @@ public class EnemySpawn : MonoBehaviour
         // Transfert data to the shooting system
         enemy.GetComponent<ShootingSystem>().ReceiveShootingSystemStats(_allShotsParent, _enemyShotType);
         // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
-        enemy.GetComponent<MouvementManager>().RecieveEnemyStats(enemyStats);
+        enemy.GetComponent<MovementManager>().RecieveEnemyStats(enemyStats);
         enemy.GetComponent<HealthManager>().RecieveEnemyHealthStats(enemyStats.enemyHP);
 
         // Assignation of a sprite, sprite size, and sprite color to the projectile

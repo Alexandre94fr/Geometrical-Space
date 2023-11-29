@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 625748153825758761}
   - component: {fileID: 6122456451606580061}
   - component: {fileID: -1747797351667393606}
-  - component: {fileID: -7092503696093369792}
+  - component: {fileID: -7493097842048125008}
   m_Layer: 7
   m_Name: RectangleProjectilePrefab
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10666667, y: 0.21333334}
   m_EdgeRadius: 0
---- !u!114 &-7092503696093369792
+--- !u!114 &-7493097842048125008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

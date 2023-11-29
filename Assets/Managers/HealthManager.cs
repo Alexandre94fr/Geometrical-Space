@@ -15,7 +15,6 @@ public class HealthManager : MonoBehaviour
     public int CurrentHP {
         get { return _currentHP; }
         set {
-            Debug.Log("Hit");
             _currentHP = value;
 
             if (_currentHP <= 0 && CompareTag("Enemy"))
@@ -47,7 +46,6 @@ public class HealthManager : MonoBehaviour
 
     void PlayerDie()
     {
-        Debug.Log("Player is dead");
         Destroy(gameObject);
     }
     #endregion

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 625748153825758761}
   - component: {fileID: 6122456451606580061}
   - component: {fileID: -4360704925259692054}
-  - component: {fileID: -7347820892998255787}
+  - component: {fileID: 4766716381935917919}
   m_Layer: 7
   m_Name: CircleProjectilePrefab
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &-7347820892998255787
+--- !u!114 &4766716381935917919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

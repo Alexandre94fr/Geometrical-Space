@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3985305794873770973}
   - component: {fileID: 6612198307575249299}
   - component: {fileID: 5314579782296371709}
-  - component: {fileID: 4713782274559583075}
+  - component: {fileID: 4260460969445402081}
   - component: {fileID: 3573373774289403002}
   m_Layer: 0
   m_Name: Minion
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9669c332400f25b4d8a85ebce20169a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4713782274559583075
+--- !u!114 &4260460969445402081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

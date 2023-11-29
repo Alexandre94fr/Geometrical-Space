@@ -30,7 +30,7 @@ public class ShootingSystem : MonoBehaviour
         {
             if (_shotStats.singleShot)
             {
-                InstantiateShot(_shotStats);
+                //PoolingSystemManager.Instance.InstantiateShot(_shotStats);
             }
             else if (_shotStats.multiShot)
             {
@@ -44,52 +44,6 @@ public class ShootingSystem : MonoBehaviour
             // Cooldown before shooting another time
             yield return new WaitForSeconds(_shotStats.projectileTimeBetweenShot);
         }
-    }
-
-    // TO DO : Faire de cette fonction une class pour le pooling
-    void InstantiateShot(ShotStats shotStats)
-    {
-        #region Calcul of the start position of the projectile
-        // Normalization of the baseProjectileDirection Vector2 variable
-        shotStats.baseProjectileDirection.Normalize();
-
-        // Calculation of the startPosition of the projectile
-        Vector2 startPosition = new(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().sprite.bounds.size.y * shotStats.baseProjectileDirection.y);
-        #endregion
-
-        #region Apparition of the projectile
-        // TO CHANGE FOR THE POOLING SYSTEM
-        GameObject shot = null;
-
-        switch (shotStats.projectileSpriteType)
-        {
-            case ShotStats.ProjectileSpriteType.Rectangular:
-                shot = Instantiate(_rectangularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                break;
-            case ShotStats.ProjectileSpriteType.Circular:
-                shot = Instantiate(_circularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                break;
-            default:
-                Debug.Assert(false, $"The projectile sprite type nammed {shotStats.projectileSpriteType}, have a value not planned in the switch");
-                Debug.Break();
-                break;
-        }
-        #endregion
-
-        #region Settings up projectile's caracteristics
-        // Setting name and tag of the projectile to his correspondant values
-        shot.name = shotStats.projectileType.ToString();
-        shot.tag = shotStats.projectileTag.ToString();
-
-        // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
-        shot.GetComponent<MouvementManager>().RecieveShotStats(shotStats);
-
-        // Assignation of a sprite, sprite size, and sprite color to the projectile
-        SpriteRenderer shotSpriteRenderer = shot.GetComponent<SpriteRenderer>();
-        shotSpriteRenderer.sprite = shotStats.projectileSprite;
-        shot.transform.localScale = shotStats.spriteSize;
-        shotSpriteRenderer.color = shotStats.spriteColor;
-        #endregion
     }
     #endregion
 }

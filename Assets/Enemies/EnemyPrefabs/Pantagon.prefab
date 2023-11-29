@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6446923218664724632}
   - component: {fileID: 1205614532578046787}
   - component: {fileID: -5244388856103693259}
-  - component: {fileID: 5322886424961608142}
+  - component: {fileID: -5501113772025769335}
   - component: {fileID: 3940768098837840973}
   m_Layer: 0
   m_Name: Pantagon
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9669c332400f25b4d8a85ebce20169a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5322886424961608142
+--- !u!114 &-5501113772025769335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -20,7 +20,7 @@ public class HitManager : MonoBehaviour
             // If player projectile collide enemy
             if (collision.CompareTag("PlayerProjectile"))
             {
-                _healthManager.CurrentHP -= collision.GetComponent<MouvementManager>()._shotStats.projectileDamage;
+                _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
                 Destroy(collision.gameObject);
             }
         }
@@ -30,13 +30,13 @@ public class HitManager : MonoBehaviour
             // If enemy projectile collide player
             if (collision.CompareTag("EnemyProjectile"))
             {
-                _healthManager.CurrentHP -= collision.GetComponent<MouvementManager>()._shotStats.projectileDamage;
+                _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
                 Destroy(collision.gameObject);
             }
             // If enemy body collide player
             else if (collision.CompareTag("Enemy"))
             {
-                _healthManager.CurrentHP -= collision.GetComponent<MouvementManager>()._enemyStats.enemyDamageWhenCollide;
+                _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._enemyStats.enemyDamageWhenCollide;
             }
         }
     }
