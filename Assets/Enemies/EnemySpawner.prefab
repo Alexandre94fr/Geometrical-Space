@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allEnemiesParent: {fileID: 0}
-  _enemyStats: {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  _enemyStats: {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
   _minionPrefab: {fileID: 8737965947231578707, guid: ae3d8630ab9c2524b8fc82eaed444aac, type: 3}
   _squarePrefab: {fileID: 8737965947231578707, guid: f6b7e5badb6a3854f927cf3defe6edf5, type: 3}
   _pantagonPrefab: {fileID: 8737965947231578707, guid: d5ad4b06c3776c9429e3f654c09973f3, type: 3}

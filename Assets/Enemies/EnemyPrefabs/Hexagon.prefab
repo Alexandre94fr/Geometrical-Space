@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 1698222226855267735}
   - component: {fileID: 5164927444882348209}
   - component: {fileID: 3993058628894006031}
-  - component: {fileID: -784397550315791780}
-  - component: {fileID: 3994897409352140371}
+  - component: {fileID: -124963599219702563}
+  - component: {fileID: 1578515944643824605}
+  - component: {fileID: -1929329596706842975}
+  - component: {fileID: 4944003104434702710}
+  - component: {fileID: 5607575212433678659}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Untagged
@@ -116,7 +119,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -138,7 +141,34 @@ PolygonCollider2D:
       - {x: 0.18498634, y: -0.31131393}
       - {x: 0.32499915, y: 0.0020476729}
   m_UseDelaunayMesh: 0
---- !u!114 &-784397550315791780
+--- !u!50 &-124963599219702563
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737965947231578707}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1578515944643824605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,10 +177,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8737965947231578707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0152f921ace254f9e41d053b131875, type: 3}
+  m_Script: {fileID: 11500000, guid: f52b3089bee139f45adc234b5c534077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3994897409352140371
+--- !u!114 &-1929329596706842975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,3 +192,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9669c332400f25b4d8a85ebce20169a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4944003104434702710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737965947231578707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0152f921ace254f9e41d053b131875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyStats: {fileID: 0}
+  _shotStats: {fileID: 0}
+--- !u!114 &5607575212433678659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737965947231578707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fd7b0773c746f4db6c609599f29b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectangularShotPrefab: {fileID: 7672623942791786001, guid: b3dfc41658eb8f04eb6e2041acc3f294, type: 3}
+  _circularShotPrefab: {fileID: 7672623942791786001, guid: 37e165b5a9e374547a6cc39a361d4e1f, type: 3}
+  _shotStats: {fileID: 0}
+  _allShotsParent: {fileID: 0}

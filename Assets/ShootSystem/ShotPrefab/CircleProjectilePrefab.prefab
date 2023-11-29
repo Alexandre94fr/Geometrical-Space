@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 625748153825758761}
   - component: {fileID: 6122456451606580061}
   - component: {fileID: -4360704925259692054}
-  - component: {fileID: 6236635733953738691}
+  - component: {fileID: -7347820892998255787}
   m_Layer: 7
   m_Name: CircleProjectilePrefab
   m_TagString: Untagged
@@ -115,13 +115,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &6236635733953738691
+--- !u!114 &-7347820892998255787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0152f921ace254f9e41d053b131875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyStats: {fileID: 0}
+  _shotStats: {fileID: 0}

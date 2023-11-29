@@ -11,6 +11,7 @@ public class EnemyStats : ScriptableObject
     public Vector2 spriteSize = new(1, 1);
     public int enemyHP;
     public int givenScoreWhenDestroyed;
+    public int enemyDamageWhenCollide = 1;
     #endregion
 
     #region Enemy Mouvement

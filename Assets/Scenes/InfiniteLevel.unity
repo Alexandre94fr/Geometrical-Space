@@ -398,37 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1477361440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1477361441}
-  m_Layer: 0
-  m_Name: AllShots
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1477361441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477361440}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477928950
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +487,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6573901112441224980, guid: 3b08bcc04d6553046a75d341999e7fb1, type: 3}
   m_PrefabInstance: {fileID: 6548499642458707445}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635824802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635824803}
+  m_Layer: 0
+  m_Name: AllShots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1635824803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635824802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658851278
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,11 +625,63 @@ PrefabInstance:
     - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
       propertyPath: _enemyStats
       value: 
-      objectReference: {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+      objectReference: {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _allShotsParent
+      value: 
+      objectReference: {fileID: 1635824802}
     - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
       propertyPath: _allEnemiesParent
       value: 
       objectReference: {fileID: 1658851278}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyThatWillSpawn
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _shotTypes.OctoShot
+      value: 
+      objectReference: {fileID: 11400000, guid: 625a386024ded034db2092078f37ffbb, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _shotTypes.MinionsShot
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ee82636503fb71489f0dbb2cc06ab2f, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyStatsThatWillSpawn
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyPrefabs.MinionPrefab
+      value: 
+      objectReference: {fileID: 8737965947231578707, guid: ae3d8630ab9c2524b8fc82eaed444aac, type: 3}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyPrefabs.SquarePrefab
+      value: 
+      objectReference: {fileID: 8737965947231578707, guid: f6b7e5badb6a3854f927cf3defe6edf5, type: 3}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _shotTypes.EnemySingleShot
+      value: 
+      objectReference: {fileID: 11400000, guid: 67ed3db8d8ed5684483aabf464662b2e, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyPrefabs.HexagonPrefab
+      value: 
+      objectReference: {fileID: 8737965947231578707, guid: daca3d4999a654b4f887da3e598afdac, type: 3}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyPrefabs.OctogonPrefab
+      value: 
+      objectReference: {fileID: 8737965947231578707, guid: f134e69807b92a04195a1a46d8ba974f, type: 3}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _shotTypes.PlayerSingleShot
+      value: 
+      objectReference: {fileID: 11400000, guid: b1935a7158d49a549b568116896979fe, type: 2}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _enemyPrefabs.PantagonPrefab
+      value: 
+      objectReference: {fileID: 8737965947231578707, guid: d5ad4b06c3776c9429e3f654c09973f3, type: 3}
+    - target: {fileID: 4686271745920295198, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+      propertyPath: _shotTypes.FrontAngledTripleShot
+      value: 
+      objectReference: {fileID: 11400000, guid: dcb91a0b38f4c5143b733ba74e08864e, type: 2}
     - target: {fileID: 6283079625018115424, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -640,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039435253646733721, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7039435253646733721, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
       propertyPath: m_LocalPosition.z
@@ -690,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 2347039201913931283, guid: 4b78dea9040cedc45a60c46b2358a18e, type: 3}
       propertyPath: _allShotsParent
       value: 
-      objectReference: {fileID: 1477361440}
+      objectReference: {fileID: 1635824802}
     - target: {fileID: 7514037341808272984, guid: 4b78dea9040cedc45a60c46b2358a18e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -807,4 +859,4 @@ SceneRoots:
   - {fileID: 3761165539362674272}
   - {fileID: 3323366972616644019}
   - {fileID: 1658851279}
-  - {fileID: 1477361441}
+  - {fileID: 1635824803}

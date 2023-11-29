@@ -18,6 +18,12 @@ public class ShootingSystem : MonoBehaviour
         StartCoroutine(ShootEndlessly());
     }
 
+    public void ReceiveShootingSystemStats(GameObject allShotGameObject, ShotStats shotStats)
+    {
+        _allShotsParent = allShotGameObject;
+        _shotStats = shotStats;
+    } 
+
     IEnumerator ShootEndlessly()
     {
         while (gameObject.activeSelf)
@@ -76,7 +82,7 @@ public class ShootingSystem : MonoBehaviour
         shot.tag = shotStats.projectileTag.ToString();
 
         // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
-        shot.GetComponent<ProjectileManager>().RecieveShotStats(shotStats);
+        shot.GetComponent<MouvementManager>().RecieveShotStats(shotStats);
 
         // Assignation of a sprite, sprite size, and sprite color to the projectile
         SpriteRenderer shotSpriteRenderer = shot.GetComponent<SpriteRenderer>();

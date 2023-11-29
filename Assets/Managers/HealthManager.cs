@@ -3,8 +3,8 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     #region Variables
-     int _maxHP = 1;
-     int _currentHP = 1;
+    int _maxHP = 1;
+    int _currentHP = 1;
     #endregion
 
     #region Getter / Setter
@@ -15,18 +15,16 @@ public class HealthManager : MonoBehaviour
     public int CurrentHP {
         get { return _currentHP; }
         set {
-            if (_currentHP - value <= 0 && CompareTag("Enemy"))
+            Debug.Log("Hit");
+            _currentHP = value;
+
+            if (_currentHP <= 0 && CompareTag("Enemy"))
             {
-                Destroy(gameObject);
+                EnemyDie();
             }
-            else if (_currentHP - value <= 0 && CompareTag("Player"))
+            else if (_currentHP <= 0 && CompareTag("Player"))
             {
                 PlayerDie();
-            }
-            else
-            {
-                Debug.Log("Hit");
-                _currentHP = value;
             }
         }
     }
@@ -40,9 +38,17 @@ public class HealthManager : MonoBehaviour
         _currentHP = maxHP;
     }
 
+    void EnemyDie()
+    {
+        // TO DO : Quand il rencontre une condition de disparition il repart dans le système de pooling
+
+        Destroy(gameObject);
+    }
+
     void PlayerDie()
     {
         Debug.Log("Player is dead");
+        Destroy(gameObject);
     }
     #endregion
 }

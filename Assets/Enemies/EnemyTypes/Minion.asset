@@ -18,7 +18,8 @@ MonoBehaviour:
   spriteSize: {x: 0.75, y: 0.75}
   enemyHP: 10
   givenScoreWhenDestroyed: 5
-  baseEnemyDirection: {x: 0, y: -90}
-  enemySpeed: 5
+  enemyDamageWhenCollide: 1
+  baseEnemyDirection: {x: 0, y: -1}
+  enemySpeed: 3.5
   isShooting: 1
   shotType: 0
