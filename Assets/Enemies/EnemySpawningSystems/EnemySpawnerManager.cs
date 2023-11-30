@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
@@ -7,8 +6,7 @@ public class EnemySpawn : MonoBehaviour
     #region Variables
     public static EnemySpawn Instance;
 
-    public EnemyStats _enemyThatWillSpawn;
-    // TO DO later : Have a script that spawns wave of enemies
+    public EnemyStats EnemyThatWillSpawn;
 
     [Header("References :")]
     [SerializeField] GameObject _allShotsParent;
@@ -45,7 +43,6 @@ public class EnemySpawn : MonoBehaviour
     #endregion
 
     #region Methods
-
     private void Start()
     {
         if (Instance == null)
@@ -53,10 +50,16 @@ public class EnemySpawn : MonoBehaviour
             Instance = this;
         }
 
-        SpawnEnemy(_enemyThatWillSpawn);
+        //SpawnEnemy(EnemyThatWillSpawn);
     }
 
-    void SpawnEnemy(EnemyStats enemyStats)
+    public void RecieveInfo(GameObject shotsParent, GameObject ennemiesParent)
+    {
+        _allShotsParent = shotsParent;
+        _allEnemiesParent = ennemiesParent;
+    }
+
+    public void SpawnEnemy(EnemyStats enemyStats)
     {
         GameObject enemy = null;
 

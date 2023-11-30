@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerSpawnerManager : MonoBehaviour
 {
     #region Variables
+    static public PlayerSpawnerManager Instance { get; private set; }
+
     [Header("Player Spawn Parameters :")]
     [SerializeField] GameObject _playerPrefab;
     [SerializeField] GameObject _playerParent;
@@ -18,6 +19,11 @@ public class PlayerSpawnerManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnPlayer(_playerPrefab, _playerParent, _playerSpawnPosition, _playerShotType, _shotsParents));
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     IEnumerator SpawnPlayer(
