@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour
     public EnemyStats _enemyThatWillSpawn;
     // TO DO later : Have a script that spawns wave of enemies
 
-    [Header("References")]
+    [Header("References :")]
     [SerializeField] GameObject _allShotsParent;
     [SerializeField] GameObject _allEnemiesParent;
 

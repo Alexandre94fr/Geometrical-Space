@@ -30,39 +30,33 @@ public class PoolingSystemManager : MonoBehaviour
             Instance = this;
         }
 
-        InstantiationOfPreloadedRectangularProjectiles(_numberOfRectangularPreloadedProjectiles, _allShotsParent);
-        InstantiationOfPreloadedCircularProjectiles(_numberOfCircularPreloadedProjectiles, _allShotsParent);
+        // Creation of the lists of size we want
+        _rectangularProjectileList = new List<GameObject>(_numberOfRectangularPreloadedProjectiles);
+        _circularProjectileList = new List<GameObject>(_numberOfCircularPreloadedProjectiles);
+
+        InstantiationOfRectangularProjectiles(_numberOfRectangularPreloadedProjectiles);
+        InstantiationOfCircularProjectiles(_numberOfCircularPreloadedProjectiles);
     }
 
     #region Initial Instantiation
-    void InstantiationOfPreloadedRectangularProjectiles(                 
-        int projectileNumber,
-        GameObject projectilesParent)
+    void InstantiationOfRectangularProjectiles(int projectileNumber)
     {
-        // Creation of the list of size we want
-        _rectangularProjectileList = new List<GameObject>(projectileNumber);
-
         // Instatiation and adding all the projectiles to the projectile list
         for (int i = 0; i < projectileNumber; i++)
         {
-            GameObject projectile = Instantiate(_rectangularShotPrefab, transform.position, Quaternion.identity, projectilesParent.transform);
+            GameObject projectile = Instantiate(_rectangularShotPrefab, transform.position, Quaternion.identity, _allShotsParent.transform);
 
             projectile.SetActive(false);
 
             _rectangularProjectileList.Add(projectile);
         }
     }
-    void InstantiationOfPreloadedCircularProjectiles(
-        int projectileNumber,
-        GameObject projectilesParent)
+    void InstantiationOfCircularProjectiles(int projectileNumber)
     {
-        // Creation of the list of size we want
-        _circularProjectileList = new List<GameObject>(projectileNumber);
-
         // Instatiation and adding all the projectiles to the projectile list
         for (int i = 0; i < projectileNumber; i++)
         {
-            GameObject projectile = Instantiate(_circularShotPrefab, transform.position, Quaternion.identity, projectilesParent.transform);
+            GameObject projectile = Instantiate(_circularShotPrefab, transform.position, Quaternion.identity, _allShotsParent.transform);
 
             projectile.SetActive(false);
 
@@ -71,53 +65,34 @@ public class PoolingSystemManager : MonoBehaviour
     }
     #endregion
 
-    void Reactive()
-    {
-        /*#region Calcul of the start position of the projectile
-        // Normalization of the baseProjectileDirection Vector2 variable
-        shotStats.baseProjectileDirection.Normalize();
-
-        // Calculation of the startPosition of the projectile
-        Vector2 startPosition = new(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().sprite.bounds.size.y * shotStats.baseProjectileDirection.y);
-        #endregion
-
-        #region Apparition of the projectile
-        GameObject shot = null;
-
-        switch (shotStats.projectileSpriteType)
+    public GameObject GetDisableRectangularProjectile() 
+    { 
+        for (int i = 0; i < _rectangularProjectileList.Count; i++)
         {
-            case ShotStats.ProjectileSpriteType.Rectangular:
-                shot = Instantiate(_rectangularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                break;
-            case ShotStats.ProjectileSpriteType.Circular:
-                shot = Instantiate(_circularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                break;
-            default:
-                Debug.Assert(false, $"The projectile sprite type nammed {shotStats.projectileSpriteType}, have a value not planned in the switch");
-                Debug.Break();
-                break;
+            if (_rectangularProjectileList[i].activeSelf == false)
+            {
+                return _rectangularProjectileList[i];
+            }
         }
+        // If there is no projectile available
+        InstantiationOfRectangularProjectiles(1);
 
-       
-        #region Settings up projectile's caracteristics
-        // Setting name and tag of the projectile to his correspondant values
-        shot.name = shotStats.projectileType.ToString();
-        shot.tag = shotStats.projectileTag.ToString();
-
-        // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
-        shot.GetComponent<MovementManager>().RecieveShotStats(shotStats);
-
-        // Assignation of a sprite, sprite size, and sprite color to the projectile
-        SpriteRenderer shotSpriteRenderer = shot.GetComponent<SpriteRenderer>();
-        shotSpriteRenderer.sprite = shotStats.projectileSprite;
-        shot.transform.localScale = shotStats.spriteSize;
-        shotSpriteRenderer.color = shotStats.spriteColor;
-        #endregion */
+        return _rectangularProjectileList[_rectangularProjectileList.Count - 1];
     }
 
-    void Desactive()
+    public GameObject GetDisableCircularProjectile()
     {
+        for (int i = 0; i < _circularProjectileList.Count; i++)
+        {
+            if (_circularProjectileList[i].activeSelf == false)
+            {
+                return _circularProjectileList[i];
+            }
+        }
+        // If there is no projectile available
+        InstantiationOfCircularProjectiles(1);
 
+        return _circularProjectileList[_circularProjectileList.Count - 1];
     }
     #endregion
 }

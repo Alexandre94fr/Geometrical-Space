@@ -21,7 +21,8 @@ public class HitManager : MonoBehaviour
             if (collision.CompareTag("PlayerProjectile"))
             {
                 _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
-                Destroy(collision.gameObject);
+                // Projectile will be re-usable thanks to the Pooling system
+                collision.gameObject.SetActive(false);
             }
         }
         // If the GameObject is an Player
@@ -31,7 +32,8 @@ public class HitManager : MonoBehaviour
             if (collision.CompareTag("EnemyProjectile"))
             {
                 _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
-                Destroy(collision.gameObject);
+                // Projectile will be re-usable thanks to the Pooling system
+                collision.gameObject.SetActive(false);
             }
             // If enemy body collide player
             else if (collision.CompareTag("Enemy"))
