@@ -65,6 +65,7 @@ public class PoolingSystemManager : MonoBehaviour
     }
     #endregion
 
+    #region Get Disable Projectile
     public GameObject GetDisableRectangularProjectile() 
     { 
         for (int i = 0; i < _rectangularProjectileList.Count; i++)
@@ -94,5 +95,6 @@ public class PoolingSystemManager : MonoBehaviour
 
         return _circularProjectileList[_circularProjectileList.Count - 1];
     }
+    #endregion
     #endregion
 }

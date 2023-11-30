@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouvements : MonoBehaviour
@@ -7,7 +5,7 @@ public class PlayerMouvements : MonoBehaviour
     #region Variables
     public static PlayerMouvements Instance;
 
-    [SerializeField] float _mouvementSpeed;
+    public float MouvementSpeed;
 
     Vector2 _mouvementDirection;
     #endregion
@@ -34,7 +32,7 @@ public class PlayerMouvements : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(_mouvementDirection * _mouvementSpeed);
+        transform.Translate(_mouvementDirection * MouvementSpeed);
     }
     #endregion
 }

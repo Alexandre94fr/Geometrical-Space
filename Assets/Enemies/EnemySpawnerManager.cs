@@ -104,8 +104,6 @@ public class EnemySpawn : MonoBehaviour
         shotSpriteRenderer.sprite = enemyStats.enemySprite;
         enemy.transform.localScale = enemyStats.spriteSize;
         shotSpriteRenderer.color = enemyStats.spriteColor;
-
-
         #endregion
     }
     #endregion

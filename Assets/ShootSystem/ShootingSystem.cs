@@ -26,9 +26,6 @@ public class ShootingSystem : MonoBehaviour
 
     IEnumerator ShootEndlessly()
     {
-        // Wait a little time to let the variable comes in (for the player)
-        yield return new WaitForSeconds(0.1f);
-
         while (gameObject.activeSelf)
         {
             if (_shotStats.singleShot)
@@ -61,24 +58,8 @@ public class ShootingSystem : MonoBehaviour
         Vector2 startPosition = new(transform.position.x, transform.position.y + GetComponent<SpriteRenderer>().sprite.bounds.size.y * shotStats.baseProjectileDirection.y);
         #endregion
 
-        /*        #region Apparition of the projectile
-                GameObject shot = null;
-
-                switch (shotStats.projectileSpriteType)
-                {
-                    case ShotStats.ProjectileSpriteType.Rectangular:
-                        shot = Instantiate(_rectangularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                        break;
-                    case ShotStats.ProjectileSpriteType.Circular:
-                        shot = Instantiate(_circularShotPrefab, startPosition, Quaternion.identity, _allShotsParent.transform);
-                        break;
-                    default:
-                        Debug.Assert(false, $"The projectile sprite type nammed {shotStats.projectileSpriteType}, have a value not planned in the switch");
-                        Debug.Break();
-                        break;
-                }*/
-
         #region Settings up projectile's caracteristics
+        // New projectile's position
         projectile.transform.position = startPosition;
 
         // Setting name and tag of the projectile to his correspondant values
