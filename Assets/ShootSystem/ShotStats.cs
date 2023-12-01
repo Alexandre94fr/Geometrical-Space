@@ -98,7 +98,7 @@ public class ShotStats : ScriptableObject
     }
     #endregion
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     private void OnValidate()
     {
         #region Show and Hide attributes

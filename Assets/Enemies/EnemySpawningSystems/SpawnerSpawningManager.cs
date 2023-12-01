@@ -154,13 +154,14 @@ public class SpawnerSpawningManager : MonoBehaviour
 
     void OnValidate()
     {
+        // Limite the _loopIntoTheXLastWave value between 1 and the total number of waves
         if (_loopIntoTheXLastWave > _waveDetails.Count)
         {
             _loopIntoTheXLastWave = _waveDetails.Count;
         }
-        if (_loopIntoTheXLastWave < 2)
+        if (_loopIntoTheXLastWave < 1)
         {
-            _loopIntoTheXLastWave = 2;
+            _loopIntoTheXLastWave = 1;
         }
     }
     #endregion

@@ -13,10 +13,7 @@ public class MovementManager : MonoBehaviour
     #region Methods
     void Start()
     {
-        if (CompareTag("PlayerProjectile") || CompareTag("EnemyProjectile"))
-        {
-            RotateOurselfToOurDirection();
-        }
+
     }
 
     // Update is called once per frame
@@ -35,6 +32,11 @@ public class MovementManager : MonoBehaviour
         _mouvementSpeed = shotStats.projectileSpeed;
 
         _shotStats = shotStats;
+
+        if (CompareTag("PlayerProjectile") || CompareTag("EnemyProjectile"))
+        {
+            RotateOurselfToOurDirection(_direction);
+        }
     }
 
     public void RecieveEnemyStats(EnemyStats enemyStats)
@@ -55,14 +57,16 @@ public class MovementManager : MonoBehaviour
         transform.Translate(mouvementSpeed * Time.deltaTime * direction, Space.World);
     }
 
-    void RotateOurselfToOurDirection()
+    void RotateOurselfToOurDirection(Vector2 direction)
     {
-        // To optimize
-        Transform actualTransform = transform;
+        // Reset last rotation
+        transform.rotation = new(0, 0, 0, 1);
 
         // Calcul and setting of the angle
-        float angle = Mathf.Atan2(_direction.x - actualTransform.position.x, _direction.y - actualTransform.position.y) * Mathf.Rad2Deg;
-        actualTransform.rotation = Quaternion.Euler(0, 0, angle);
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+
+        // Apply rotation to the transform
+        transform.rotation = Quaternion.Euler(0, 0, -angle);
     }
     #endregion
 }
