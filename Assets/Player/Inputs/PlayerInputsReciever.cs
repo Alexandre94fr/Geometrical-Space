@@ -3,6 +3,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputsReciever : MonoBehaviour
 {
+    #region Variables
+    PauseMenuHandler _pauseMenuHandler;
+    #endregion
+
+    #region Methods
+    private void Start()
+    {
+        _pauseMenuHandler = PauseMenuHandler.Instance;
+    }
+
     public void RecieveMouvementKeys(InputAction.CallbackContext context)
     {
         PlayerMouvements.Instance.RecieveMouvementInputValues(context.ReadValue<Vector2>());
@@ -10,9 +20,14 @@ public class PlayerInputsReciever : MonoBehaviour
 
     public void RecievePauseKeys(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && _pauseMenuHandler.gameObject.activeSelf == true)
         {
-            
+            _pauseMenuHandler.UnpauseGame();
+        }
+        else if (context.performed)
+        {
+            _pauseMenuHandler.PauseGame();
         }
     }
+    #endregion
 }

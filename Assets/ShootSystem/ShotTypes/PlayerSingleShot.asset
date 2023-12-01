@@ -21,7 +21,7 @@ MonoBehaviour:
   projectileType: 0
   projectileSpeed: 15
   projectileTimeBetweenShot: 0.25
-  baseProjectileDirection: {x: 0.4472136, y: 0.8944272}
+  baseProjectileDirection: {x: 0, y: 90}
   projectileTag: 0
   projectileSpriteType: 0
   projectileSprite: {fileID: 21300000, guid: c3ea1661322b8d84b9741bde431d6170, type: 3}

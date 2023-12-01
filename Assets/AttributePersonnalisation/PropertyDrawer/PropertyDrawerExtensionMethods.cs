@@ -2,6 +2,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public static class PropertyDrawerExtensionMethods
 {
     public static object GetTargetObjectOfProperty(SerializedProperty prop)
@@ -64,3 +65,4 @@ public static class PropertyDrawerExtensionMethods
         return enm.Current;
     }
 }
+#endif

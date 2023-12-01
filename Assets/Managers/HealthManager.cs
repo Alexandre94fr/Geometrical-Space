@@ -5,6 +5,7 @@ public class HealthManager : MonoBehaviour
     #region Variables
     int _maxHP = 1;
     int _currentHP = 1;
+    int _givenScoreWhenDestroyed;
     #endregion
 
     #region Getter / Setter
@@ -31,21 +32,24 @@ public class HealthManager : MonoBehaviour
 
     #region Methods
     // Only used by the enemies
-    public void RecieveEnemyHealthStats(int maxHP)
+    public void RecieveEnemyStats(int maxHP, int givenScoreWhenDestroyed)
     {
         _maxHP = maxHP;
         _currentHP = maxHP;
+        _givenScoreWhenDestroyed = givenScoreWhenDestroyed;
     }
 
     void EnemyDie()
     {
-        // TO DO : Quand il rencontre une condition de disparition il repart dans le système de pooling
+        ScoreManager.Instance.PlayerScore += _givenScoreWhenDestroyed;
 
         Destroy(gameObject);
     }
 
     void PlayerDie()
     {
+        LoseMenuManager.Instance.PlayerLose(ScoreManager.Instance.PlayerScore);
+
         Destroy(gameObject);
     }
     #endregion

@@ -3,9 +3,11 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ShowConditionAttribute))]
 public class ShowConditionPropertyDrawer : PropertyDrawer
 {
+    
     private enum Visibility
     {
         Visible,
@@ -92,4 +94,6 @@ public class ShowConditionPropertyDrawer : PropertyDrawer
 
         return Visibility.Hidden;
     }
+    
 }
+#endif

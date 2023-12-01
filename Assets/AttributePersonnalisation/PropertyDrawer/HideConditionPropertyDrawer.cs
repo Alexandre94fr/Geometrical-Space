@@ -3,6 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(HideConditionAttribute))]
 public class HideConditionPropertyDrawer : PropertyDrawer
 {
@@ -93,3 +94,4 @@ public class HideConditionPropertyDrawer : PropertyDrawer
         return Visibility.Hidden;
     }
 }
+#endif

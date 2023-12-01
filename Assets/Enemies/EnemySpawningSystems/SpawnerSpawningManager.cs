@@ -152,6 +152,7 @@ public class SpawnerSpawningManager : MonoBehaviour
         }
     }
 
+    #if UNITY_EDITOR
     void OnValidate()
     {
         // Limite the _loopIntoTheXLastWave value between 1 and the total number of waves
@@ -164,5 +165,6 @@ public class SpawnerSpawningManager : MonoBehaviour
             _loopIntoTheXLastWave = 1;
         }
     }
-    #endregion
+    #endif
+#endregion
 }
