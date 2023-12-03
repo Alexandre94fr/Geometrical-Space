@@ -11,14 +11,13 @@ public class PlayerSpawnerManager : MonoBehaviour
     [SerializeField] GameObject _playerParent;
     [SerializeField] Vector2 _playerSpawnPosition;
     [SerializeField] ShotStats _playerShotType;
-    [SerializeField] GameObject _shotsParents;
     #endregion
 
     #region Methods
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnPlayer(_playerPrefab, _playerParent, _playerSpawnPosition, _playerShotType, _shotsParents));
+        StartCoroutine(SpawnPlayer(_playerPrefab, _playerParent, _playerSpawnPosition, _playerShotType));
 
         if (Instance == null)
         {
@@ -30,8 +29,7 @@ public class PlayerSpawnerManager : MonoBehaviour
         GameObject playerPrefab,
         GameObject playersParent,
         Vector2 spawnPosition,
-        ShotStats playerShotType,
-        GameObject shotsParent)
+        ShotStats playerShotType)
     {
         // To avoid error, we wait a little time, to let the variable being set
         yield return new WaitForSeconds(0.01f);
@@ -44,7 +42,7 @@ public class PlayerSpawnerManager : MonoBehaviour
         player.tag = "Player";
 
         // Transfert data to the shooting system
-        player.GetComponent<ShootingSystem>().ReceiveShootingSystemStats(shotsParent, playerShotType);
+        player.GetComponent<ShootingSystem>().ReceiveShootingSystemStats(playerShotType);
 
         /// Will be used of there is a local multiplier
 

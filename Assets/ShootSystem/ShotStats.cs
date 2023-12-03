@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ShotStats", menuName = "ScriptableObject/ShotStats")]
@@ -21,7 +23,6 @@ public class ShotStats : ScriptableObject
 
     #region Based stats
     [Header("Basic Stats")]
-    public ProjectileType projectileType;
     public float projectileSpeed;
     public float projectileTimeBetweenShot;
     public Vector2 baseProjectileDirection = new(0, -90);
@@ -46,33 +47,29 @@ public class ShotStats : ScriptableObject
     #region Multiple Shot Stats
     [Header("Multiple Shot Stats")]
     [ShowCondition("multiShot")]
-        public ProjectileTag projectilesTag;
-    [ShowCondition("multiShot")]
-        public ProjectileSpriteType projectilesSpriteType;
-    [ShowCondition("multiShot")]
-        public Sprite projectilesSprite;
-    [ShowCondition("multiShot")]
-        public Vector2 spritesSize = new(1, 1);
-    [ShowCondition("multiShot")]
-        public Color spritesColor;
-    [ShowCondition("multiShot")]
-        public int projectilesDamage;
-    [ShowCondition("multiShot")]
-    [Range(2, Mathf.Infinity)]
-        public int totalNomberOfProjectile;
-    [ShowCondition("multiShot")]
         public int angledDifferenceBetweenProjectile;
+    
+        public List<ProjectilesStats> projectilesStats;
+
+    [Serializable]
+    public struct ProjectilesStats
+    {
+         public ProjectileTag projectileTag;
+         public ProjectileSpriteType projectileSpriteType;
+         public Vector2 projectileSize;
+         public Sprite projectileSprite;
+         public Color spriteColor;
+         public int projectileDamage;
+    }
     #endregion
 
     #region Spawning Shot Stats
     [Header("Spawning Shot Stats")]
     [ShowCondition("spawningShot")]
-        public EnemyStats.EnemyListEnum enemyList;
-    [ShowCondition("spawningShot")]
-    [Range(2, Mathf.Infinity)]
-        public int totalNumberOfEnemiesSpawn;
-    [ShowCondition("spawningShot")]
         public int angledDifferenceBetweenEnemies;
+    [ShowCondition("spawningShot")]
+        public List<EnemyStats> enemyList;
+
     #endregion
 
     #region Enums
@@ -82,7 +79,7 @@ public class ShotStats : ScriptableObject
         EnemySingleShot,
         FrontAngledTripleShot,
         MinionsShot,
-        PlayerMultiShot,
+        EnemyMultiShot,
     }
 
     public enum ProjectileSpriteType

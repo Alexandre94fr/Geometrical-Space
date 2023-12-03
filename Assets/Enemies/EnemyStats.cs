@@ -5,7 +5,7 @@ public class EnemyStats : ScriptableObject
 {
     #region Based stats
     [Header("Basic Stats")]
-    public EnemyListEnum enemyType;
+    public GameObject enemyPrefab;
     public Sprite enemySprite;
     public Color spriteColor;
     public Vector2 spriteSize = new(1, 1);
@@ -16,7 +16,11 @@ public class EnemyStats : ScriptableObject
 
     #region Enemy Mouvement
     [Header("Enemy Mouvement")]
-    public Vector2 baseEnemyDirection;
+    public bool enemyMoveToTheLastPlayerPosition;
+    [ShowCondition("enemyMoveToTheLastPlayerPosition")]
+        public bool enemyMoveToThePlayerPosition;
+    [HideCondition("enemyMoveToTheLastPlayerPosition")]
+        public Vector2 baseEnemyDirection;
     public float enemySpeed;
     #endregion
 
@@ -24,17 +28,6 @@ public class EnemyStats : ScriptableObject
     [Header("Enemy Shooting")]
     public bool isShooting;
     [ShowCondition("isShooting")]
-    public ShotStats.ProjectileType shotType;
-    #endregion
-
-    #region Enums
-    public enum EnemyListEnum
-    {
-        Minion,
-        Square,
-        Pantagon,
-        Hexagon,
-        Octogon
-    }
+    public ShotStats shotType;
     #endregion
 }

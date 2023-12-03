@@ -221,4 +221,3 @@ MonoBehaviour:
   _rectangularShotPrefab: {fileID: 7672623942791786001, guid: b3dfc41658eb8f04eb6e2041acc3f294, type: 3}
   _circularShotPrefab: {fileID: 7672623942791786001, guid: 37e165b5a9e374547a6cc39a361d4e1f, type: 3}
   _shotStats: {fileID: 0}
-  _allShotsParent: {fileID: 0}

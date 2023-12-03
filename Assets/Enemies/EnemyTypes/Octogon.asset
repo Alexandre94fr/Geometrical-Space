@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d17232672b4812489768b0a387763c7, type: 3}
   m_Name: Octogon
   m_EditorClassIdentifier: 
-  enemyType: 4
+  enemyPrefab: {fileID: 8737965947231578707, guid: f134e69807b92a04195a1a46d8ba974f, type: 3}
   enemySprite: {fileID: 21300000, guid: 4d145b96f62e7754c843f08f77e6e3ec, type: 3}
   spriteColor: {r: 1, g: 0, b: 0, a: 1}
   spriteSize: {x: 3, y: 3}
   enemyHP: 100
   givenScoreWhenDestroyed: 100
+  enemyDamageWhenCollide: 1
+  enemyMoveToTheLastPlayerPosition: 0
+  enemyMoveToThePlayerPosition: 0
   baseEnemyDirection: {x: 0, y: -90}
-  enemySpeed: 0.15
+  enemySpeed: 0.5
   isShooting: 1
-  shotType: 4
+  shotType: {fileID: 11400000, guid: 625a386024ded034db2092078f37ffbb, type: 2}

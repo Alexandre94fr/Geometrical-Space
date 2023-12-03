@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d17232672b4812489768b0a387763c7, type: 3}
   m_Name: Hexagon
   m_EditorClassIdentifier: 
-  enemyType: 3
+  enemyPrefab: {fileID: 8737965947231578707, guid: daca3d4999a654b4f887da3e598afdac, type: 3}
   enemySprite: {fileID: 21300000, guid: f9f220249b7b11f49814cf71e44f20d0, type: 3}
   spriteColor: {r: 1, g: 0.5, b: 0, a: 1}
   spriteSize: {x: 2, y: 2}
   enemyHP: 100
   givenScoreWhenDestroyed: 50
+  enemyDamageWhenCollide: 1
+  enemyMoveToTheLastPlayerPosition: 1
+  enemyMoveToThePlayerPosition: 1
   baseEnemyDirection: {x: 0, y: -90}
-  enemySpeed: 0.25
+  enemySpeed: 1.5
   isShooting: 0
-  shotType: 0
+  shotType: {fileID: 0}

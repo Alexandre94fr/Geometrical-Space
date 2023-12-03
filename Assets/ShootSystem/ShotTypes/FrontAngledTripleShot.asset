@@ -18,24 +18,36 @@ MonoBehaviour:
   singleShot: 0
   multiShot: 1
   spawningShot: 0
-  projectileType: 0
+  projectileType: 2
   projectileSpeed: 5
   projectileTimeBetweenShot: 3
-  baseProjectileDirection: {x: 0, y: -90}
+  baseProjectileDirection: {x: 0, y: -1}
   projectileTag: 0
   projectileSpriteType: 0
   projectileSprite: {fileID: 21300000, guid: a6dea0c7cb7c76d4fb7af99f5a305ece, type: 3}
   spriteColor: {r: 1, g: 0, b: 0, a: 0}
   spriteSize: {x: 1, y: 1}
   projectileDamage: 1
-  projectilesTag: 0
-  projectilesSpriteType: 1
-  projectilesSprite: {fileID: 21300000, guid: a6dea0c7cb7c76d4fb7af99f5a305ece, type: 3}
-  spritesSize: {x: 1, y: 1}
-  spritesColor: {r: 1, g: 0, b: 0, a: 1}
-  projectilesDamage: 0
-  totalNomberOfProjectile: 3
-  angledDifferenceBetweenProjectile: 15
-  enemyList: 0
+  angledDifferenceBetweenProjectile: 45
+  projectilesStats:
+  - projectileTag: 1
+    projectileSpriteType: 1
+    projectileSize: {x: 0.5, y: 0.5}
+    projectileSprite: {fileID: 21300000, guid: a6dea0c7cb7c76d4fb7af99f5a305ece, type: 3}
+    spriteColor: {r: 0, g: 1, b: 0, a: 1}
+    projectileDamage: 1
+  - projectileTag: 1
+    projectileSpriteType: 1
+    projectileSize: {x: 0.5, y: 0.5}
+    projectileSprite: {fileID: 21300000, guid: a6dea0c7cb7c76d4fb7af99f5a305ece, type: 3}
+    spriteColor: {r: 0, g: 0.75, b: 0, a: 1}
+    projectileDamage: 1
+  - projectileTag: 1
+    projectileSpriteType: 1
+    projectileSize: {x: 0.5, y: 0.5}
+    projectileSprite: {fileID: 21300000, guid: a6dea0c7cb7c76d4fb7af99f5a305ece, type: 3}
+    spriteColor: {r: 0, g: 1, b: 0, a: 1}
+    projectileDamage: 1
+  enemyList: {fileID: 0}
   totalNumberOfEnemiesSpawn: 0
   angledDifferenceBetweenEnemies: 0

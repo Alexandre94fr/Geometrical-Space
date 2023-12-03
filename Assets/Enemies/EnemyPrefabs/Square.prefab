@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1698222226855267735}
   - component: {fileID: 5164927444882348209}
-  - component: {fileID: 8578398856883514892}
+  - component: {fileID: 7730666868871164710}
   - component: {fileID: 6968086714813364738}
   - component: {fileID: 675076889185789085}
   - component: {fileID: 8620181376429416777}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8578398856883514892
+--- !u!61 &7730666868871164710
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
 --- !u!50 &6968086714813364738
 Rigidbody2D:
@@ -215,4 +215,3 @@ MonoBehaviour:
   _rectangularShotPrefab: {fileID: 7672623942791786001, guid: b3dfc41658eb8f04eb6e2041acc3f294, type: 3}
   _circularShotPrefab: {fileID: 7672623942791786001, guid: 37e165b5a9e374547a6cc39a361d4e1f, type: 3}
   _shotStats: {fileID: 0}
-  _allShotsParent: {fileID: 0}

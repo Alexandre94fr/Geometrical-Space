@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d17232672b4812489768b0a387763c7, type: 3}
   m_Name: Square
   m_EditorClassIdentifier: 
-  enemyType: 1
+  enemyPrefab: {fileID: 8737965947231578707, guid: f6b7e5badb6a3854f927cf3defe6edf5, type: 3}
   enemySprite: {fileID: 21300000, guid: c7d2ee47859274a4f83e0166e4bdea4c, type: 3}
   spriteColor: {r: 0, g: 1, b: 0.35, a: 1}
   spriteSize: {x: 1, y: 1}
   enemyHP: 25
   givenScoreWhenDestroyed: 15
-  baseEnemyDirection: {x: 0, y: -90}
-  enemySpeed: 0.5
+  enemyDamageWhenCollide: 1
+  enemyMoveToTheLastPlayerPosition: 0
+  enemyMoveToThePlayerPosition: 0
+  baseEnemyDirection: {x: 0, y: -1}
+  enemySpeed: 1
   isShooting: 1
-  shotType: 2
+  shotType: {fileID: 11400000, guid: dcb91a0b38f4c5143b733ba74e08864e, type: 2}

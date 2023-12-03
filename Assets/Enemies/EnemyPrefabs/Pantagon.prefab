@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1698222226855267735}
   - component: {fileID: 5164927444882348209}
   - component: {fileID: -6844087248828901535}
-  - component: {fileID: -6446923218664724632}
   - component: {fileID: 1205614532578046787}
+  - component: {fileID: -6446923218664724632}
   - component: {fileID: -5244388856103693259}
   - component: {fileID: -5501113772025769335}
   - component: {fileID: 3940768098837840973}
@@ -117,18 +117,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6446923218664724632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8737965947231578707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52b3089bee139f45adc234b5c534077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &1205614532578046787
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -179,6 +167,18 @@ PolygonCollider2D:
       - {x: -0.32402116, y: 0.08380949}
       - {x: -0.22338659, y: -0.3229671}
   m_UseDelaunayMesh: 0
+--- !u!114 &-6446923218664724632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737965947231578707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52b3089bee139f45adc234b5c534077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-5244388856103693259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,4 +220,3 @@ MonoBehaviour:
   _rectangularShotPrefab: {fileID: 7672623942791786001, guid: b3dfc41658eb8f04eb6e2041acc3f294, type: 3}
   _circularShotPrefab: {fileID: 7672623942791786001, guid: 37e165b5a9e374547a6cc39a361d4e1f, type: 3}
   _shotStats: {fileID: 0}
-  _allShotsParent: {fileID: 0}

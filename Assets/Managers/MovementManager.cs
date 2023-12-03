@@ -3,51 +3,79 @@ using UnityEngine;
 public class MovementManager : MonoBehaviour
 {
     #region Variables
+
     [HideInInspector] public EnemyStats _enemyStats;
     [HideInInspector] public ShotStats _shotStats;
 
+    PlayerMouvements _player;
     Vector2 _direction;
     float _mouvementSpeed;
     #endregion
 
     #region Methods
-    void Start()
+    void Awake()
     {
-
+        _player = PlayerMouvements.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_enemyStats != null)
+        {
+            if (_enemyStats.enemyMoveToThePlayerPosition && _player != null)
+            {
+                _direction = (_player.transform.position - transform.position).normalized;
+                RotateOurselfToOurDirection(_direction);
+            }
+        }
+
         MoveOurselves(_direction, _mouvementSpeed);
     }
 
     #region Recievers
-    public void RecieveShotStats(ShotStats shotStats)
+    public void RecieveShotStats(ShotStats shotStats, GameObject shooter)
     {
-        // Normalization of the direction Vector2 variable
-        shotStats.baseProjectileDirection.Normalize();
-
-        _direction = shotStats.baseProjectileDirection;
+        if (shotStats.multiShot)
+        {
+            _direction = (transform.position - shooter.transform.position).normalized;
+        }
+        // The projectile will have the direction of the shooter + is set direction
+        else
+        {
+            if (CompareTag("PlayerProjectile"))
+            {
+                _direction = shooter.transform.rotation * shotStats.baseProjectileDirection.normalized;
+            }
+            else if (CompareTag("EnemyProjectile"))
+            {
+                _direction = shooter.transform.rotation * -shotStats.baseProjectileDirection.normalized;
+            }
+        }
+        
         _mouvementSpeed = shotStats.projectileSpeed;
 
         _shotStats = shotStats;
 
-        if (CompareTag("PlayerProjectile") || CompareTag("EnemyProjectile"))
-        {
-            RotateOurselfToOurDirection(_direction);
-        }
+        RotateOurselfToOurDirection(_direction);
     }
 
     public void RecieveEnemyStats(EnemyStats enemyStats)
     {
-        // Normalization of the direction Vector2 variable
-        enemyStats.baseEnemyDirection.Normalize();
+        if (enemyStats.enemyMoveToTheLastPlayerPosition && _player != null)
+        {
+            _direction = (_player.transform.position - transform.position).normalized;
+        }
+        else
+        {
+            _direction = enemyStats.baseEnemyDirection.normalized;
+        }
 
-        _direction = enemyStats.baseEnemyDirection;
         _mouvementSpeed = enemyStats.enemySpeed;
 
         _enemyStats = enemyStats;
+
+        RotateOurselfToOurDirection(_direction);
     }
     #endregion
 

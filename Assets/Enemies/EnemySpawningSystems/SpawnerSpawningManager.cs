@@ -7,13 +7,11 @@ public class SpawnerSpawningManager : MonoBehaviour
 {
     #region Variables
     [Header("References :")]
-    [SerializeField] GameObject _shotsParent;
     [SerializeField] GameObject _enemiesParent;
 
     [Header("Enemy Wave Parameters :")]
     [SerializeField] GameObject _spawnerPrefab;
     [SerializeField] GameObject _spawnerParent;
-    [SerializeField] float _timeBetweenEachWave = 10f;
     public bool _isLevelInfinite;
     [ShowCondition("_isLevelInfinite")]
         [SerializeField] int _loopIntoTheXLastWave;
@@ -22,6 +20,7 @@ public class SpawnerSpawningManager : MonoBehaviour
     [Serializable]
     public struct EnemiesPerWave
     {
+        public float timeBetweenEachWave;
         public Vector2 gapBetweenSpawners;
         public List<EnemyStats> enemyStatsList;
     }
@@ -32,20 +31,18 @@ public class SpawnerSpawningManager : MonoBehaviour
     {
         if (_isLevelInfinite)
         {
-            StartCoroutine(InfiniteSpawningLoop(_spawnerPrefab, _spawnerParent, _timeBetweenEachWave, _waveDetails, _shotsParent, _enemiesParent));
+            StartCoroutine(InfiniteSpawningLoop(_spawnerPrefab, _spawnerParent, _waveDetails, _enemiesParent));
         }
         else
         {
-            StartCoroutine(FiniteSpawningLoop(_spawnerPrefab, _spawnerParent, _timeBetweenEachWave, _waveDetails, _shotsParent, _enemiesParent));
+            StartCoroutine(FiniteSpawningLoop(_spawnerPrefab, _spawnerParent, _waveDetails, _enemiesParent));
         }
     }
 
     IEnumerator InfiniteSpawningLoop(
         GameObject spawnerPrefab,
         GameObject spawnerParent,
-        float timeBetweenEachWave,
         List<EnemiesPerWave> waveDetails,
-        GameObject shotsParent,
         GameObject enemiesParent)
     {
         // We wait the player to load
@@ -61,10 +58,10 @@ public class SpawnerSpawningManager : MonoBehaviour
                 for (int i = 0; i < _waveDetails.Count; i++)
                 {
                     waveNumber = i;
-                    SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[i], shotsParent, enemiesParent);
+                    SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[i], enemiesParent);
 
                     // Wait for the new wave
-                    yield return new WaitForSeconds(timeBetweenEachWave);
+                    yield return new WaitForSeconds(waveDetails[i].timeBetweenEachWave);
                 }
             }
 
@@ -75,10 +72,10 @@ public class SpawnerSpawningManager : MonoBehaviour
             {
                 waveNumber++;
 
-                SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[waveNumber], shotsParent, enemiesParent);
+                SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[waveNumber], enemiesParent);
 
                 // Wait for the new wave
-                yield return new WaitForSeconds(timeBetweenEachWave);
+                yield return new WaitForSeconds(waveDetails[i].timeBetweenEachWave);
             }
         }
     }
@@ -86,9 +83,7 @@ public class SpawnerSpawningManager : MonoBehaviour
     IEnumerator FiniteSpawningLoop(
     GameObject spawnerPrefab,
     GameObject spawnerParent,
-    float timeBetweenEachWave,
     List<EnemiesPerWave> waveDetails,
-    GameObject shotsParent,
     GameObject enemiesParent)
     {
         // We wait the player to load
@@ -96,10 +91,10 @@ public class SpawnerSpawningManager : MonoBehaviour
 
         for (int i = 0; i < _waveDetails.Count; i++)
         {
-            SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[i], shotsParent, enemiesParent);
+            SpawnNewEnemyWave(spawnerPrefab, spawnerParent, waveDetails[i], enemiesParent);
 
             // Wait for the new wave
-            yield return new WaitForSeconds(timeBetweenEachWave);
+            yield return new WaitForSeconds(waveDetails[i].timeBetweenEachWave);
         }
 
         // Player survived
@@ -109,7 +104,6 @@ public class SpawnerSpawningManager : MonoBehaviour
         GameObject spawnerPrefab,
         GameObject spawnerParent,
         EnemiesPerWave waveDetails,
-        GameObject shotsParent,
         GameObject enemiesParent)
     {
         // To optimize
@@ -145,10 +139,10 @@ public class SpawnerSpawningManager : MonoBehaviour
 
             EnemySpawn enemySpawn = spawner.GetComponent<EnemySpawn>();
 
-            enemySpawn.RecieveInfo(shotsParent, enemiesParent);
+            enemySpawn.RecieveInfo(enemiesParent);
             enemySpawn.SpawnEnemy(waveDetails.enemyStatsList[i]);
 
-            Destroy(spawner);
+            //Destroy(spawner);
         }
     }
 

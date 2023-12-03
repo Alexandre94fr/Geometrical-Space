@@ -18,24 +18,16 @@ MonoBehaviour:
   singleShot: 1
   multiShot: 0
   spawningShot: 0
-  projectileType: 0
   projectileSpeed: 15
   projectileTimeBetweenShot: 0.25
-  baseProjectileDirection: {x: 0, y: 90}
+  baseProjectileDirection: {x: 0, y: 1}
   projectileTag: 0
   projectileSpriteType: 0
   projectileSprite: {fileID: 21300000, guid: c3ea1661322b8d84b9741bde431d6170, type: 3}
   spriteColor: {r: 0, g: 0.5, b: 1, a: 1}
   spriteSize: {x: 1, y: 1}
   projectileDamage: 5
-  projectilesTag: 0
-  projectilesSpriteType: 0
-  projectilesSprite: {fileID: 0}
-  spritesSize: {x: 1, y: 1}
-  spritesColor: {r: 0, g: 0, b: 0, a: 0}
-  projectilesDamage: 0
-  totalNomberOfProjectile: 1
   angledDifferenceBetweenProjectile: 0
-  enemyList: 0
-  totalNumberOfEnemiesSpawn: 0
+  projectilesStats: []
   angledDifferenceBetweenEnemies: 0
+  enemyList: []
