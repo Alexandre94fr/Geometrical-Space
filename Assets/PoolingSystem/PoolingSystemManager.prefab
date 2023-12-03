@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5047811737363585696}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f4e3619b53d0f4181611a01835c846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfPreloadedProjectiles: 10
-  _rectangularShotPrefab: {fileID: 0}
-  _circularShotPrefab: {fileID: 0}
-  _shotStats: {fileID: 0}
   _allShotsParent: {fileID: 0}
+  _shotStats: {fileID: 0}
+  _numberOfRectangularPreloadedProjectiles: 25
+  _rectangularShotPrefab: {fileID: 7672623942791786001, guid: b3dfc41658eb8f04eb6e2041acc3f294, type: 3}
+  _rectangularProjectileList: []
+  _numberOfCircularPreloadedProjectiles: 100
+  _circularShotPrefab: {fileID: 7672623942791786001, guid: 37e165b5a9e374547a6cc39a361d4e1f, type: 3}
+  _circularProjectileList: []

@@ -44,14 +44,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e784a345fcb154b9b30d9955b1f5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shotsParent: {fileID: 0}
   _enemiesParent: {fileID: 0}
   _spawnerPrefab: {fileID: 6283079625018115424, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
   _spawnerParent: {fileID: 0}
-  _timeBetweenEachWave: 10
+  _isLevelInfinite: 1
+  _loopIntoTheXLastWave: 3
   _waveDetails:
-  - gapBetweenSpawners: {x: 5, y: 0}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
     enemyStatsList:
     - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
     - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
     - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 1}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: -1}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 10, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 10
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 10
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 15
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 109e49178f2b0684d96bd30526c135e2, type: 2}
+  - timeBetweenEachWave: 7.5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 7.5
+    gapBetweenSpawners: {x: 4, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 10
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 109e49178f2b0684d96bd30526c135e2, type: 2}

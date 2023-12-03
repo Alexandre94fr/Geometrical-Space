@@ -46,6 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 8413465186820850565, guid: 4b78dea9040cedc45a60c46b2358a18e, type: 3}
   _playerParent: {fileID: 0}
-  _playerSpawnPosition: {x: 0, y: 0}
+  _playerSpawnPosition: {x: 0, y: -7}
   _playerShotType: {fileID: 11400000, guid: b1935a7158d49a549b568116896979fe, type: 2}
-  _shotsParents: {fileID: 0}

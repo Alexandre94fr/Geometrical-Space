@@ -12,15 +12,15 @@ public class PoolingSystemManager : MonoBehaviour
     [SerializeField] ShotStats _shotStats;
 
     [Header("Rectangular Projectile")]
-    [SerializeField] List<GameObject> _rectangularProjectileList;
     [SerializeField] int _numberOfRectangularPreloadedProjectiles;
     [SerializeField] GameObject _rectangularShotPrefab;
+    [SerializeField] List<GameObject> _rectangularProjectileList;
+
 
     [Header("Circular Projectile")]
-    [SerializeField] List<GameObject> _circularProjectileList;
     [SerializeField] int _numberOfCircularPreloadedProjectiles;
     [SerializeField] GameObject _circularShotPrefab;
-
+    [SerializeField] List<GameObject> _circularProjectileList;
     #endregion
 
     #region Methods
