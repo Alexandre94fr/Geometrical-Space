@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -240,8 +240,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -428,6 +428,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6889303270572314368}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
+        m_MethodName: CursorVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 6889303270572314368}
         m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -637,6 +649,18 @@ MonoBehaviour:
           m_StringArgument: InfiniteLevel
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6889303270572314368}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
+        m_MethodName: CursorVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5240438903995030457
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,10 +726,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You had N score
+  m_text: You have N score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -836,10 +860,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You had N score
+  m_text: You have N score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -972,8 +996,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You died
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1212,8 +1236,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You died
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
-  m_sharedMaterial: {fileID: -2048940475490082050, guid: c5b5dc28a8ba40943a8e2a2bb6e498f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
+  m_sharedMaterial: {fileID: -1711976934787051003, guid: c15c64b89ed749f4cbeb51d51904f870, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

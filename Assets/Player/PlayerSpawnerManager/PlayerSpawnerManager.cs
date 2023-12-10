@@ -17,8 +17,6 @@ public class PlayerSpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-
         StartCoroutine(SpawnPlayer(_playerPrefab, _playerParent, _playerSpawnPosition, _playerShotType));
 
         if (Instance == null)

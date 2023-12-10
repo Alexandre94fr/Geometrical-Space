@@ -18,5 +18,10 @@ public class SceneHandler : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void CursorVisibility(bool isVisible)
+    {
+        Cursor.visible = isVisible;
+    }
     #endregion
 }

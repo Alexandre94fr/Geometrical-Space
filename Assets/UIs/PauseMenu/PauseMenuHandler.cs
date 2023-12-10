@@ -34,6 +34,8 @@ public class PauseMenuHandler : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(_resumeButton);
 
+        Cursor.visible = true;
+
         gameObject.SetActive(true);
 
         Time.timeScale = 0f;
@@ -41,6 +43,8 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void UnpauseGame()
     {
+        Cursor.visible = true;
+
         gameObject.SetActive(false);
 
         Time.timeScale = 1f;

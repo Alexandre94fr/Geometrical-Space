@@ -25,11 +25,13 @@ public class LoseMenuManager : MonoBehaviour
 
     public void PlayerLose(int playerScore)
     {
+        Cursor.visible = true;
+
         gameObject.SetActive(true);
         EventSystem.current.SetSelectedGameObject(_restartButtonUI);
 
-        _scoreTextUI.text = "You had " + playerScore.ToString() + " score";
-        _scoreOutlineTextUI.text = "You had " + playerScore.ToString() + " score";
+        _scoreTextUI.text = "You have " + playerScore.ToString() + " score";
+        _scoreOutlineTextUI.text = "You have " + playerScore.ToString() + " score";
     }
     #endregion
 }
