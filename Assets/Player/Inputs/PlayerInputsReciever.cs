@@ -22,10 +22,12 @@ public class PlayerInputsReciever : MonoBehaviour
     {
         if (context.performed && _pauseMenuHandler.gameObject.activeSelf == true)
         {
+            Cursor.visible = false;
             _pauseMenuHandler.UnpauseGame();
         }
         else if (context.performed)
         {
+            Cursor.visible = true;
             _pauseMenuHandler.PauseGame();
         }
     }

@@ -43,7 +43,7 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void UnpauseGame()
     {
-        Cursor.visible = true;
+        Cursor.visible = false;
 
         gameObject.SetActive(false);
 
