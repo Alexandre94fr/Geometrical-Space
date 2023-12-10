@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1017523857279140570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3692966225077498113}
+  - component: {fileID: 6080183507499197419}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3692966225077498113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017523857279140570}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6080183507499197419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017523857279140570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d29b2dc28209f4584564af8cef380a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerShootingSFX:
+  - {fileID: 8300000, guid: 1436c01cc4b32774bbc91b6dbbb5b2f9, type: 3}
+  - {fileID: 8300000, guid: 7afaece9757931f4ebd1a82625c33638, type: 3}
+  - {fileID: 8300000, guid: b757bc5e5386ac74a9a55de6542b7b4a, type: 3}
+  - {fileID: 8300000, guid: 81e0874b9f8c63b498f41bb6fcc03b1e, type: 3}
+  _enemyShootingSFX:
+  - {fileID: 8300000, guid: f2875db80467dc84eb396e155a67fdda, type: 3}
+  - {fileID: 8300000, guid: c7ba14970c4375f4ca72f76d899cf84c, type: 3}
+  - {fileID: 8300000, guid: e3f038fe41b0ad04c9073905634e357e, type: 3}
+  - {fileID: 8300000, guid: 017d1a6b50b7d9f4fbf59df04b8f3bbb, type: 3}
+  - {fileID: 8300000, guid: e3d2b328cbc68784b9d569e9f55aca64, type: 3}
+  - {fileID: 8300000, guid: 2262fb4aa123a61498ea5ee0a1f49ab6, type: 3}
+  _playerHit: {fileID: 8300000, guid: d72e6554ad83fb34781fa7a21a893353, type: 3}
+  _playerDestroyed: {fileID: 8300000, guid: a10eb023093bb234e96a99514c38c726, type: 3}
+  _powerUpTaken: {fileID: 8300000, guid: 0139ccec6f9aa2d459f885ce62a7bc05, type: 3}
+  _lastPowerUpReached: {fileID: 8300000, guid: 9b7b9d0d10b4321408fd0ca74362567d, type: 3}
