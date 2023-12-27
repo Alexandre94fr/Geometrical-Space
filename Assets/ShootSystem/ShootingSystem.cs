@@ -194,7 +194,7 @@ public class ShootingSystem : MonoBehaviour
             #endregion
 
             #region PlayShootingSFX
-            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemySpawningOtherEnemies);
+            //SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemySpawningOtherEnemies);
             #endregion
 
             // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnerSpawningManager : MonoBehaviour
@@ -140,9 +141,28 @@ public class SpawnerSpawningManager : MonoBehaviour
 
             enemySpawn.RecieveInfo(enemiesParent);
             enemySpawn.SpawnEnemy(waveDetails.enemyStatsList[i]);
-
-            Destroy(spawner);
+            
+            // If the enemy spawn is not a enemy spawner 
+            if (waveDetails.enemyStatsList[i].shotType.spawningShot == false)
+            {
+                Destroy(spawner);
+            }
+            else
+            {
+                // Check if the enemy spawn spawned is destroy if yes then destroy the spawner
+                StartCoroutine(CheckIfEnemySpawnerIsDestroyed(enemySpawn.ReturnTheLastEnemyCreated(), spawner));
+            }
         }
+    }
+
+    IEnumerator CheckIfEnemySpawnerIsDestroyed(GameObject enemy, GameObject spawner)
+    {
+        while (enemy.gameObject != null)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        Destroy(spawner);
     }
 
     #if UNITY_EDITOR
