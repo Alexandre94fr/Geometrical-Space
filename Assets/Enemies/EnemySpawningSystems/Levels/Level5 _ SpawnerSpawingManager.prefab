@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7297410835410199684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580835081323331428}
+  - component: {fileID: 4012534326135415488}
+  m_Layer: 0
+  m_Name: Level5 _ SpawnerSpawingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1580835081323331428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297410835410199684}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 12.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4012534326135415488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297410835410199684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e784a345fcb154b9b30d9955b1f5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemiesParent: {fileID: 0}
+  _spawnerPrefab: {fileID: 6283079625018115424, guid: 080172aa268c6cc4cae81760636b8619, type: 3}
+  _spawnerParent: {fileID: 0}
+  _isLevelInfinite: 0
+  _loopIntoTheXLastWave: 2
+  _waveDetails:
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 1}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: -1}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+  - timeBetweenEachWave: 5
+    gapBetweenSpawners: {x: 10, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 10
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: d4da4c9c522810840b27538d476dba33, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+  - timeBetweenEachWave: 10
+    gapBetweenSpawners: {x: 5, y: 0}
+    enemyStatsList:
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: a6191bf2a5769a54dac98281a7703135, type: 2}
+    - {fileID: 11400000, guid: bd5ca27a4ee917846b6face45a95f0ca, type: 2}
+    - {fileID: 11400000, guid: 8e88aaca8bb1cc84286592c76fdf16e5, type: 2}

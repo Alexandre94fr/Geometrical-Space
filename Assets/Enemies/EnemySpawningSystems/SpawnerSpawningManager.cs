@@ -141,16 +141,24 @@ public class SpawnerSpawningManager : MonoBehaviour
 
             enemySpawn.RecieveInfo(enemiesParent);
             enemySpawn.SpawnEnemy(waveDetails.enemyStatsList[i]);
-            
-            // If the enemy spawn is not a enemy spawner 
-            if (waveDetails.enemyStatsList[i].shotType.spawningShot == false)
+
+            // If the enemy spawned shoot
+            if (waveDetails.enemyStatsList[i].isShooting)
             {
-                Destroy(spawner);
+                // If the enemy spawned is not a enemy spawner 
+                if (waveDetails.enemyStatsList[i].shotType.spawningShot == false)
+                {
+                    Destroy(spawner);
+                }
+                else
+                {
+                    // Check if the enemy spawner spawned is destroy if yes then destroy the spawner
+                    StartCoroutine(CheckIfEnemySpawnerIsDestroyed(enemySpawn.ReturnTheLastEnemyCreated(), spawner));
+                }
             }
             else
             {
-                // Check if the enemy spawn spawned is destroy if yes then destroy the spawner
-                StartCoroutine(CheckIfEnemySpawnerIsDestroyed(enemySpawn.ReturnTheLastEnemyCreated(), spawner));
+                Destroy(spawner);
             }
         }
     }
