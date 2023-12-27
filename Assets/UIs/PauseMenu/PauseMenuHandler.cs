@@ -21,7 +21,6 @@ public class PauseMenuHandler : MonoBehaviour
     }
 
     // When the player leave the window (Alt Tab)
-    // NOT WORKING (for some reason)
     void OnApplicationPause(bool pause)
     {
         if (pause)
@@ -32,11 +31,11 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void PauseGame()
     {
-        EventSystem.current.SetSelectedGameObject(_resumeButton);
-
         Cursor.visible = true;
 
         gameObject.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(_resumeButton);
 
         Time.timeScale = 0f;
     }
