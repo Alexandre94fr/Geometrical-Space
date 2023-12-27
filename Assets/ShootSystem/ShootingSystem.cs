@@ -82,14 +82,18 @@ public class ShootingSystem : MonoBehaviour
         #endregion
 
         #region PlayShootingSFX
+        AudioSource audioSource = projectile.GetComponent<AudioSource>();
+
         if (shotStats.projectileTag == ShotStats.ProjectileTag.PlayerProjectile)
         {
-            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerShotting, 0.5f);
+            audioSource.clip = SFXManager.Instance.ReturnSFX(SFXManager.TypesOfSFX.PlayerShotting);
         }
         else if (shotStats.projectileTag == ShotStats.ProjectileTag.EnemyProjectile)
         {
-            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyShotting, 0.5f);
+            audioSource.clip = SFXManager.Instance.ReturnSFX(SFXManager.TypesOfSFX.EnemyShotting);
         }
+
+        audioSource.Play();
         #endregion
 
         projectile.SetActive(true);
@@ -140,14 +144,18 @@ public class ShootingSystem : MonoBehaviour
             #endregion
 
             #region PlayShootingSFX
+            AudioSource audioSource = projectile.GetComponent<AudioSource>();
+
             if (shotStats.projectileTag == ShotStats.ProjectileTag.PlayerProjectile)
             {
-                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerShotting, 0.5f);
+                audioSource.clip = SFXManager.Instance.ReturnSFX(SFXManager.TypesOfSFX.PlayerShotting);
             }
             else if (shotStats.projectileTag == ShotStats.ProjectileTag.EnemyProjectile)
             {
-                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyShotting, 0.5f);
+                audioSource.clip = SFXManager.Instance.ReturnSFX(SFXManager.TypesOfSFX.EnemyShotting);
             }
+
+            audioSource.Play();
             #endregion
 
             projectile.SetActive(true);
@@ -172,8 +180,7 @@ public class ShootingSystem : MonoBehaviour
             // Anti-crash mesure
             if(enemyList[i].shotType == shotStats)
             {
-                Debug.LogError("CRITICAL ERROR! You can't configure an enemies spawner to spawn other enemies spawner, else the game will spawn an infinite amount of enemies.");
-                Debug.Break();
+                Debug.LogError("CRITICAL ERROR! You can't configure an enemies spawner to spawn other enemies spawner, else the game will be in an infinity loop.");
                 return;
             }
 
@@ -191,10 +198,6 @@ public class ShootingSystem : MonoBehaviour
 
             // Settings the new position
             enemy.transform.position = new(transform.position.x + offset.x, transform.position.y + offset.y);
-            #endregion
-
-            #region PlayShootingSFX
-            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemySpawningOtherEnemies);
             #endregion
 
             // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage

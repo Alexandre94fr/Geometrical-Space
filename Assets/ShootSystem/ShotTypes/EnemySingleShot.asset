@@ -18,6 +18,7 @@ MonoBehaviour:
   singleShot: 1
   multiShot: 0
   spawningShot: 0
+  projectileType: 1
   projectileSpeed: 7.5
   projectileTimeBetweenShot: 2.5
   baseProjectileDirection: {x: 0, y: -1}
@@ -29,5 +30,6 @@ MonoBehaviour:
   projectileDamage: 1
   angledDifferenceBetweenProjectile: 0
   projectilesStats: []
+  enemyList: {fileID: 0}
+  totalNumberOfEnemiesSpawn: 0
   angledDifferenceBetweenEnemies: 0
-  enemyList: []

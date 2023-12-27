@@ -32,8 +32,6 @@ public class LoseMenuManager : MonoBehaviour
 
         _scoreTextUI.text = "You have " + playerScore.ToString() + " score";
         _scoreOutlineTextUI.text = "You have " + playerScore.ToString() + " score";
-
-        Time.timeScale = 0f;
     }
     #endregion
 }

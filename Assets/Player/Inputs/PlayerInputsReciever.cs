@@ -24,7 +24,6 @@ public class PlayerInputsReciever : MonoBehaviour
         {
             Cursor.visible = false;
             _pauseMenuHandler.UnpauseGame();
-
         }
         else if (context.performed)
         {

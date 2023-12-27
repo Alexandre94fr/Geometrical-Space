@@ -128,6 +128,7 @@ public class SpawnerSpawningManager : MonoBehaviour
             }
             else if (numberOfEnemies % 2 == 0)
             {
+                //(gapBetweenSpawners.x / 2)
                 spawnerPosition = new(
                     gameObjectPosition.x + (gapBetweenSpawners.x / 2) + (extremity + i ) * gapBetweenSpawners.x,
                     gameObjectPosition.y + (gapBetweenSpawners.y / 2) + (extremity + i ) * gapBetweenSpawners.y
@@ -141,7 +142,7 @@ public class SpawnerSpawningManager : MonoBehaviour
             enemySpawn.RecieveInfo(enemiesParent);
             enemySpawn.SpawnEnemy(waveDetails.enemyStatsList[i]);
 
-            Destroy(spawner);
+            //Destroy(spawner);
         }
     }
 
