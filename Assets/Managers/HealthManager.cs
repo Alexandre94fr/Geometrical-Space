@@ -43,12 +43,16 @@ public class HealthManager : MonoBehaviour
     {
         ScoreManager.Instance.PlayerScore += _givenScoreWhenDestroyed;
 
+        SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyDestroyed, 0.5f);
+
         Destroy(gameObject);
     }
 
     void PlayerDie()
     {
         LoseMenuManager.Instance.PlayerLose(ScoreManager.Instance.PlayerScore);
+
+        SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerDestroyed);
 
         Destroy(gameObject);
     }
