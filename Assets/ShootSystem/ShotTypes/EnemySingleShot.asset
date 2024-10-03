@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EnemySingleShot
   m_EditorClassIdentifier: 
   _hideSingleShotEnable: 0
-  _hideMultiShotEnable: 0
-  _hideSpawingShotEnable: 0
-  singleShot: 0
+  _hideMultiShotEnable: 1
+  _hideSpawingShotEnable: 1
+  singleShot: 1
   multiShot: 0
   spawningShot: 0
   projectileSpeed: 7.5
