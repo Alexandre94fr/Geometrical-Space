@@ -13,9 +13,11 @@ public class HealthManager : MonoBehaviour
         get { return _maxHP; } 
     }
 
-    public int CurrentHP {
+    public int CurrentHP
+    {
         get { return _currentHP; }
-        set {
+        set
+        {
             _currentHP = value;
 
             if (_currentHP <= 0 && CompareTag("Enemy"))
