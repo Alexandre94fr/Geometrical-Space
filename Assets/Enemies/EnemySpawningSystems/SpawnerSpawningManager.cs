@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnerSpawningManager : MonoBehaviour
@@ -128,7 +129,6 @@ public class SpawnerSpawningManager : MonoBehaviour
             }
             else if (numberOfEnemies % 2 == 0)
             {
-                //(gapBetweenSpawners.x / 2)
                 spawnerPosition = new(
                     gameObjectPosition.x + (gapBetweenSpawners.x / 2) + (extremity + i ) * gapBetweenSpawners.x,
                     gameObjectPosition.y + (gapBetweenSpawners.y / 2) + (extremity + i ) * gapBetweenSpawners.y
@@ -142,8 +142,35 @@ public class SpawnerSpawningManager : MonoBehaviour
             enemySpawn.RecieveInfo(enemiesParent);
             enemySpawn.SpawnEnemy(waveDetails.enemyStatsList[i]);
 
-            //Destroy(spawner);
+            // If the enemy spawned shoot
+            if (waveDetails.enemyStatsList[i].isShooting)
+            {
+                // If the enemy spawned is not a enemy spawner 
+                if (waveDetails.enemyStatsList[i].shotType.spawningShot == false)
+                {
+                    Destroy(spawner);
+                }
+                else
+                {
+                    // Check if the enemy spawner spawned is destroy if yes then destroy the spawner
+                    StartCoroutine(CheckIfEnemySpawnerIsDestroyed(enemySpawn.ReturnTheLastEnemyCreated(), spawner));
+                }
+            }
+            else
+            {
+                Destroy(spawner);
+            }
         }
+    }
+
+    IEnumerator CheckIfEnemySpawnerIsDestroyed(GameObject enemy, GameObject spawner)
+    {
+        while (enemy.gameObject != null)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        Destroy(spawner);
     }
 
     #if UNITY_EDITOR

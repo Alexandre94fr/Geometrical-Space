@@ -4,19 +4,26 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
     #region Methods
-    public void ChangeScene(string _sceneName)
+    public void ChangeScene(string sceneName)
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadSceneAsync(_sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
     }
-    public void Reload()
+
+    public void ReloadScene()
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CursorVisibility(bool isVisible)
+    {
+        Cursor.visible = isVisible;
     }
     #endregion
 }

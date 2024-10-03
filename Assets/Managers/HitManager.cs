@@ -21,8 +21,12 @@ public class HitManager : MonoBehaviour
             if (collision.CompareTag("PlayerProjectile"))
             {
                 _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
+
                 // Projectile will be re-usable thanks to the Pooling system
                 collision.gameObject.SetActive(false);
+
+                // Sound
+                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyHitten, 0.5f);
             }
         }
         // If the GameObject is an Player
@@ -34,11 +38,17 @@ public class HitManager : MonoBehaviour
                 _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._shotStats.projectileDamage;
                 // Projectile will be re-usable thanks to the Pooling system
                 collision.gameObject.SetActive(false);
+
+                // Sound
+                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerHitten);
             }
             // If enemy body collide player
             else if (collision.CompareTag("Enemy"))
             {
                 _healthManager.CurrentHP -= collision.GetComponent<MovementManager>()._enemyStats.enemyDamageWhenCollide;
+
+                // Sound
+                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerHitten);
             }
         }
     }

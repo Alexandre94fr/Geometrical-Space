@@ -79,9 +79,20 @@ public class ShootingSystem : MonoBehaviour
 
         // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
         projectile.GetComponent<MovementManager>().RecieveShotStats(shotStats, gameObject);
+        #endregion
+
+        #region PlayShootingSFX
+        if (shotStats.projectileTag == ShotStats.ProjectileTag.PlayerProjectile)
+        {
+            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerShotting, 0.5f);
+        }
+        else if (shotStats.projectileTag == ShotStats.ProjectileTag.EnemyProjectile)
+        {
+            SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyShotting, 0.5f);
+        }
+        #endregion
 
         projectile.SetActive(true);
-        #endregion
     }
 
     /// <summary> Used to set the value of MULTIPLE projectile (used for multipleShot) </summary>
@@ -126,9 +137,20 @@ public class ShootingSystem : MonoBehaviour
 
             // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage
             projectile.GetComponent<MovementManager>().RecieveShotStats(shotStats, gameObject);
+            #endregion
+
+            #region PlayShootingSFX
+            if (shotStats.projectileTag == ShotStats.ProjectileTag.PlayerProjectile)
+            {
+                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.PlayerShotting, 0.5f);
+            }
+            else if (shotStats.projectileTag == ShotStats.ProjectileTag.EnemyProjectile)
+            {
+                SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemyShotting, 0.5f);
+            }
+            #endregion
 
             projectile.SetActive(true);
-            #endregion
         }
     }
 
@@ -150,7 +172,8 @@ public class ShootingSystem : MonoBehaviour
             // Anti-crash mesure
             if(enemyList[i].shotType == shotStats)
             {
-                Debug.LogError("CRITICAL ERROR! You can't configure an enemies spawner to spawn other enemies spawner, else the game will be in an infinity loop.");
+                Debug.LogError("CRITICAL ERROR! You can't configure an enemies spawner to spawn other enemies spawner, else the game will spawn an infinite amount of enemies.");
+                Debug.Break();
                 return;
             }
 
@@ -163,11 +186,15 @@ public class ShootingSystem : MonoBehaviour
             Vector2 offset =
                 // Angle offset
                 Quaternion.Euler(0, 0, (-shotStats.angledDifferenceBetweenEnemies * i) + shotStats.angledDifferenceBetweenEnemies * numberEnemiesOnOneSide)
-            // Direction who start the offset
+                // Direction who start the offset
                 * shotStats.baseProjectileDirection * (spriteYSize + 0.5f);
 
             // Settings the new position
             enemy.transform.position = new(transform.position.x + offset.x, transform.position.y + offset.y);
+            #endregion
+
+            #region PlayShootingSFX
+            //SoundsManager.Instance.PlaySFX(SoundsManager.TypesOfSFX.EnemySpawningOtherEnemies);
             #endregion
 
             // Transfert projectile data to the projectile -> Make the projectile move into a precise direction, and can deal damage

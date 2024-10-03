@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: EnemySingleShot
   m_EditorClassIdentifier: 
   _hideSingleShotEnable: 0
-  _hideMultiShotEnable: 1
-  _hideSpawingShotEnable: 1
-  singleShot: 1
+  _hideMultiShotEnable: 0
+  _hideSpawingShotEnable: 0
+  singleShot: 0
   multiShot: 0
   spawningShot: 0
-  projectileType: 1
   projectileSpeed: 7.5
   projectileTimeBetweenShot: 2.5
   baseProjectileDirection: {x: 0, y: -1}
@@ -30,6 +29,5 @@ MonoBehaviour:
   projectileDamage: 1
   angledDifferenceBetweenProjectile: 0
   projectilesStats: []
-  enemyList: {fileID: 0}
-  totalNumberOfEnemiesSpawn: 0
   angledDifferenceBetweenEnemies: 0
+  enemyList: []

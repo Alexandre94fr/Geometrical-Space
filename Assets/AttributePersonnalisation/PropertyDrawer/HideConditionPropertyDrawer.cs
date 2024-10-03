@@ -1,3 +1,5 @@
+// Script made by Maxime MAURIN, upgraded by Ruben DRAI <3
+
 using System;
 using System.Reflection;
 using UnityEditor;

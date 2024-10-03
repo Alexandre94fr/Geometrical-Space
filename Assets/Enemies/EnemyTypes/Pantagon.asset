@@ -22,6 +22,6 @@ MonoBehaviour:
   enemyMoveToTheLastPlayerPosition: 0
   enemyMoveToThePlayerPosition: 0
   baseEnemyDirection: {x: 0, y: -1}
-  enemySpeed: 0.1
+  enemySpeed: 0.75
   isShooting: 1
   shotType: {fileID: 11400000, guid: 1ee82636503fb71489f0dbb2cc06ab2f, type: 2}
